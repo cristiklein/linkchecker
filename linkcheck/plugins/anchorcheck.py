@@ -21,6 +21,7 @@ import urllib.parse
 from . import _ContentPlugin
 from .. import log, LOG_PLUGIN
 from ..htmlutil import linkparse
+from ..checker.const import WARN_URL_ANCHORCHECK_ANCHOR_NOT_FOUND
 
 
 class AnchorCheck(_ContentPlugin):
@@ -70,4 +71,4 @@ class UrlAnchorCheck:
             _("Anchor `%(name)s' (decoded: `%(decoded)s') not found.") % args,
             _("Available anchors: %(anchors)s.") % args,
         )
-        url_data.add_warning(msg)
+        url_data.add_warning(msg, tag=WARN_URL_ANCHORCHECK_ANCHOR_NOT_FOUND)

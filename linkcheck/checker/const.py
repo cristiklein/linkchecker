@@ -75,6 +75,7 @@ ExcList = ExcCacheList + ExcNoCacheList
 URL_MAX_LENGTH = 2047
 
 # the warnings
+WARN_URL_ANCHORCHECK_ANCHOR_NOT_FOUND = "url-anchorcheck-anchor-not-found"
 WARN_URL_EFFECTIVE_URL = "url-effective-url"
 WARN_URL_ERROR_GETTING_CONTENT = "url-error-getting-content"
 WARN_URL_CONTENT_SIZE_TOO_LARGE = "url-content-too-large"
@@ -96,6 +97,10 @@ WARN_XML_PARSE_ERROR = "xml-parse-error"
 
 # registered warnings
 Warnings = {
+    WARN_URL_ANCHORCHECK_ANCHOR_NOT_FOUND: _(
+        "The URL points to an anchor which could not be found in the target page."
+        "Either the anchor is incorrect or it is generated in JavaScript."
+    ),
     WARN_URL_EFFECTIVE_URL: _("The effective URL is different from the original."),
     WARN_URL_ERROR_GETTING_CONTENT: _("Could not get the content of the URL."),
     WARN_URL_CONTENT_SIZE_TOO_LARGE: _("The URL content size is too large."),

@@ -134,6 +134,7 @@ filtering
     [filtering]
     ignorewarningsforurls=
       ^https://redirected\.example\.com ^http-redirected
+      ^https://github.com ^url-anchorcheck-anchor-not-found
 
 **internlinks=**\ *REGEX*
     Regular expression to add more URLs recognized as internal links.
@@ -613,6 +614,9 @@ The following warnings are recognized by **ignorewarnings** and
     Redirected to a different URL.
 **mail-no-mx-host**
     The mail MX host could not be found.
+**url-anchorcheck-anchor-not-found**
+    The URL points to an anchor which could not be found in the target page.
+    Either the anchor is incorrect or it is generated in JavaScript.
 **url-content-size-zero**
     The URL content size is zero.
 **url-content-too-large**
