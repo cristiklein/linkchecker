@@ -27,12 +27,12 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.TH "LINKCHECKER" "1" "September 10, 2024" "10.5.0.post0+gdae72c8b.d20240910113942" "LinkChecker"
+.TH "LINKCHECKER" "1" "September 17, 2024" "10.5.0.post1+gd643a008" "LinkChecker"
 .SH NAME
 linkchecker \- command line client to check HTML documents and websites for broken links
 .SH SYNOPSIS
 .sp
-\fBlinkchecker\fP [\fIoptions\fP] [\fIfile\-or\-url\fP]...
+\fBlinkchecker\fP [\fIoptions\fP] [\fIfile\-or\-url\fP]…
 .SH DESCRIPTION
 .sp
 LinkChecker features
@@ -78,7 +78,7 @@ $ linkchecker http://www.example.com/
 Beware that this checks the whole site which can have thousands of
 URLs. Use the \fI\%\-r\fP option to restrict the recursion depth.
 .sp
-Don\(aqt check URLs with \fB/secret\fP in its name. All other links are
+Don’t check URLs with \fB/secret\fP in its name. All other links are
 checked as usual:
 .INDENT 0.0
 .INDENT 3.5
@@ -202,7 +202,7 @@ suppress all console output with the option \fI\%\-o\fP \fInone\fP\&.
 .INDENT 0.0
 .TP
 .B \-\-no\-warnings
-Don\(aqt log warnings. Default is to log warnings.
+Don’t log warnings. Default is to log warnings.
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -305,7 +305,7 @@ username. See also \fI\%\-p\fP\&.
 .TP
 .B \-\-user\-agent=STRING
 Specify the User\-Agent string to send to the HTTP server, for
-example \(dqMozilla/4.0\(dq. The default is \(dqLinkChecker/X.Y\(dq where X.Y is
+example “Mozilla/4.0”. The default is “LinkChecker/X.Y” where X.Y is
 the current version of LinkChecker.
 .UNINDENT
 .SS Input options
@@ -319,7 +319,7 @@ Read from stdin a list of white\-space separated URLs to check.
 .B FILE\-OR\-URL
 The location to start checking with.
 A file can be a simple list of URLs, one per line, if the first line is
-\(dq# LinkChecker URL list\(dq.
+“# LinkChecker URL list”.
 .UNINDENT
 .SH CONFIGURATION FILES
 .sp
@@ -578,7 +578,7 @@ It must not match the ignored URL list. This is controlled with the
 \fI\%\-\-ignore\-url\fP option.
 .IP 6. 3
 The Robots Exclusion Protocol must allow links in the URL to be
-followed recursively. This is checked by searching for a \(dqnofollow\(dq
+followed recursively. This is checked by searching for a “nofollow”
 directive in the HTML header data.
 .UNINDENT
 .sp

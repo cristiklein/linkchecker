@@ -27,7 +27,7 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.TH "LINKCHECKERRC" "5" "September 10, 2024" "10.5.0.post0+gdae72c8b.d20240910113942" "LinkChecker"
+.TH "LINKCHECKERRC" "5" "September 17, 2024" "10.5.0.post1+gd643a008" "LinkChecker"
 .SH NAME
 linkcheckerrc \- configuration file for LinkChecker
 .SH DESCRIPTION
@@ -82,7 +82,7 @@ Command line option: none
 .TP
 \fBuseragent=\fP\fISTRING\fP
 Specify the User\-Agent string to send to the HTTP server, for
-example \(dqMozilla/4.0\(dq. The default is \(dqLinkChecker/X.Y\(dq where X.Y is
+example “Mozilla/4.0”. The default is “LinkChecker/X.Y” where X.Y is
 the current version of LinkChecker.
 Command line option: \fI\%\-\-user\-agent\fP
 .TP
@@ -133,7 +133,7 @@ be accessed before checking.
 The default is to use robots.txt files.
 Command line option: \fI\%\-\-no\-robots\fP
 .TP
-\fBallowedschemes=\fP\fINAME\fP[\fB,\fP\fINAME\fP\&...]
+\fBallowedschemes=\fP\fINAME\fP[\fB,\fP\fINAME\fP…]
 Allowed URL schemes as comma\-separated list.
 Command line option: none
 .TP
@@ -149,7 +149,7 @@ Command line option: none
 Only check syntax of URLs matching the given regular expressions.
 Command line option: \fI\%\-\-ignore\-url\fP
 .TP
-\fBignorewarnings=\fP\fINAME\fP[\fB,\fP\fINAME\fP\&...]
+\fBignorewarnings=\fP\fINAME\fP[\fB,\fP\fINAME\fP…]
 Ignore the comma\-separated list of warnings. See \fI\%WARNINGS\fP for
 the list of supported warnings. Messages are logged as information.
 Command line option: none
@@ -240,7 +240,7 @@ form.
 .SS URL checking results
 .INDENT 0.0
 .TP
-\fBfileoutput=\fP\fITYPE\fP[\fB,\fP\fITYPE\fP\&...]
+\fBfileoutput=\fP\fITYPE\fP[\fB,\fP\fITYPE\fP…]
 Output to a file \fBlinkchecker\-out.\fP\fITYPE\fP, or
 \fB$XDG_DATA_HOME/linkchecker/failures\fP for the \fBfailures\fP output type.
 Valid file output types are \fBtext\fP, \fBhtml\fP, \fBsql\fP, \fBcsv\fP,
@@ -300,7 +300,7 @@ Command line option: \fI\%\-\-no\-status\fP
 .SS Application
 .INDENT 0.0
 .TP
-\fBdebug=\fP\fISTRING\fP[\fB,\fP\fISTRING\fP\&...]
+\fBdebug=\fP\fISTRING\fP[\fB,\fP\fISTRING\fP…]
 Print debugging output for the given logger. Available debug
 loggers are \fBcmdline\fP, \fBchecking\fP, \fBcache\fP, \fBplugin\fP and \fBall\fP\&.
 \fBall\fP is an alias for all available loggers.
@@ -421,7 +421,7 @@ See \fI\%[text]\fP section above.
 Set CSV separator. Default is a semicolon (\fB;\fP).
 .TP
 \fBquotechar=\fP\fICHAR\fP
-Set CSV quote character. Default is a double quote (\fB\(dq\fP).
+Set CSV quote character. Default is a double quote (\fB”\fP).
 .TP
 \fBdialect=\fP\fISTRING\fP
 Controls the output formatting.
@@ -550,10 +550,10 @@ valid or invalid, with messages
 1 or 0, only in some logger types reported
 .TP
 \fBbase\fP
-base href=...
+base href=…
 .TP
 \fBname\fP
-<a href=...>name</a> and <img alt=\(dqname\(dq>
+<a href=…>name</a> and <img alt=”name”>
 .TP
 \fBparenturl\fP
 if any
@@ -574,10 +574,10 @@ check time
 the original url name, can be relative
 .TP
 \fBintro\fP
-the blurb at the beginning, \(dqstarting at ...\(dq
+the blurb at the beginning, “starting at …”
 .TP
 \fBoutro\fP
-the blurb at the end, \(dqfound x errors ...\(dq
+the blurb at the end, “found x errors …”
 .UNINDENT
 .SH MULTILINE
 .sp
@@ -624,7 +624,7 @@ options in their section.
 .SS AnchorCheck
 .sp
 Checks validity of HTML anchors. When checking local files, URLs with anchors
-that link to directories e.g. \(dqexample/#anchor\(dq are not supported. There is no
+that link to directories e.g. “example/#anchor” are not supported. There is no
 such limitation when using http(s).
 .SS LocationInfo
 .sp
@@ -639,11 +639,11 @@ get their content.
 .TP
 \fBwarningregex=\fP\fIREGEX\fP
 Use this to check for pages that contain some form of error message,
-for example \(dqThis page has moved\(dq or \(dqOracle Application error\(dq.
+for example “This page has moved” or “Oracle Application error”.
 \fIREGEX\fP should be unquoted.
 .sp
 Note that multiple values can be combined in the regular expression,
-for example \(dq(This page has moved|Oracle Application error)\(dq.
+for example “(This page has moved|Oracle Application error)”.
 .UNINDENT
 .SS SslCertificateCheck
 .sp
@@ -673,9 +673,9 @@ The HtmlSyntaxCheck plugin is currently broken and is disabled.
 Print HTTP headers in URL info.
 .INDENT 0.0
 .TP
-\fBprefixes=\fP\fIprefix1\fP[,*prefix2*]...
+\fBprefixes=\fP\fIprefix1\fP[,*prefix2*]…
 List of comma separated header prefixes. For example to display all
-HTTP headers that start with \(dqX\-\(dq.
+HTTP headers that start with “X\-“.
 .UNINDENT
 .SS CssSyntaxCheck
 .sp
@@ -744,6 +744,9 @@ The mail MX host could not be found.
 \fBurl\-anchorcheck\-anchor\-not\-found\fP
 The URL points to an anchor which could not be found in the target page.
 Either the anchor is incorrect or it is generated in JavaScript.
+Ignore this warning if you want linkcheckeer to still throw an error if
+the other URL components are broken, e.g., the path without anchor throws
+a 404.
 .TP
 \fBurl\-content\-size\-zero\fP
 The URL content size is zero.

@@ -27,7 +27,7 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.TH "LINKCHECKERRC" "5" "August 27, 2024" "10.4.0.post49+g7cf5037e" "LinkChecker"
+.TH "LINKCHECKERRC" "5" "September 17, 2024" "10.5.0.post1+gd643a008" "LinkChecker"
 .SH NAME
 linkcheckerrc \- Konfigurationsdatei für LinkChecker
 .SH BESCHREIBUNG
@@ -150,6 +150,7 @@ Example:
 [filtering]
 ignorewarningsforurls=
   ^https://redirected\e.example\e.com ^http\-redirected
+  ^https://github.com ^url\-anchorcheck\-anchor\-not\-found
 .ft P
 .fi
 .UNINDENT
@@ -690,6 +691,13 @@ Redirected to a different URL.
 .TP
 \fBmail\-no\-mx\-host\fP
 Der MX Mail\-Rechner konnte nicht gefunden werden.
+.TP
+\fBurl\-anchorcheck\-anchor\-not\-found\fP
+The URL points to an anchor which could not be found in the target page.
+Either the anchor is incorrect or it is generated in JavaScript.
+Ignore this warning if you want linkcheckeer to still throw an error if
+the other URL components are broken, e.g., the path without anchor throws
+a 404.
 .TP
 \fBurl\-content\-size\-zero\fP
 Der URL Inhaltsgrößenangabe ist Null.

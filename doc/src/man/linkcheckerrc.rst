@@ -617,6 +617,9 @@ The following warnings are recognized by **ignorewarnings** and
 **url-anchorcheck-anchor-not-found**
     The URL points to an anchor which could not be found in the target page.
     Either the anchor is incorrect or it is generated in JavaScript.
+    Ignore this warning if you want linkcheckeer to still throw an error if
+    the other URL components are broken, e.g., the path without anchor throws
+    a 404.
 **url-content-size-zero**
     The URL content size is zero.
 **url-content-too-large**
